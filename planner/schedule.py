@@ -39,7 +39,7 @@ def cmd_schedule_workouts(args):
     race_day = datetime.datetime.strptime(args.race_day, '%Y-%m-%d')
     first_monday = race_day + datetime.timedelta(days=-race_day.weekday(), weeks=-(train_weeks-2))
 
-    for week_nb in range(1, len(week_ids)):
+    for week_nb in range(0, len(week_ids)):
         plan = training_plan[week_ids[week_nb]]
         week_monday = first_monday + datetime.timedelta(weeks=+(week_nb-1))
         monday = week_monday.strftime('%Y-%m-%d')
