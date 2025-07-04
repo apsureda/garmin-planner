@@ -339,7 +339,7 @@ def expand_config(config):
     for pk, pv in paces.items():
         if re.compile('^.+ in .+$').match(pv.strip()):
             paces[pk] = ms_to_pace(dist_time_to_ms(pv))
-    heart_rates = config.get('heart_rates', [])
+    heart_rates = config.get('heart_rates', {})
     for hrk, hrv in heart_rates.items():
         hr_range = []
         hr_up = heart_rates.get('hr_up', 0)
